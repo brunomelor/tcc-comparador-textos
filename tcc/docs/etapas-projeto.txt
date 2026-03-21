@@ -1,0 +1,391 @@
+================================================================================
+  ETAPAS DO PROJETO — TCC + SISTEMA DE COMPARAÇÃO DE CONTEÚDO DE TEXTOS
+  Bruno Lorencatto — Engenharia de Software — UNINTER — 2026
+================================================================================
+
+
+================================================================================
+PARTE 1 — ETAPAS DO TCC (ARTIGO EM WORD)
+================================================================================
+
+O artigo é gerado automaticamente pelo script gerar-tcc.py utilizando a
+biblioteca python-docx, com formatação ABNT (NBR 14724, NBR 6023/2018).
+
+Arquivo gerado: docs/tcc-bruno-lorencatto.docx
+
+--------------------------------------------------------------------------------
+1. ELEMENTOS PRÉ-TEXTUAIS
+--------------------------------------------------------------------------------
+
+  1.1. Título do artigo
+       - "DESENVOLVIMENTO DE SISTEMA DE COMPARAÇÃO DE CONTEÚDO DE TEXTOS"
+       - Centralizado, Arial 14, negrito
+
+  1.2. Autoria
+       - Bruno Meinertz Lorençatto, RU:3802493
+       - Centro Universitário Internacional — UNINTER
+       - Alinhado à direita
+
+  1.3. Resumo
+       - Texto corrido em Arial 10, espaçamento simples, sem recuo
+       - Conteúdo: objetivo do trabalho, metodologia, tecnologias (Python,
+         FastAPI, NLTK, scikit-learn, React, TypeScript, Tailwind CSS),
+         resultados obtidos
+       - Palavras-chave: similaridade textual; processamento de linguagem
+         natural; TF-IDF; engenharia de software; comparação de documentos
+
+--------------------------------------------------------------------------------
+2. SEÇÃO 1 — INTRODUÇÃO
+--------------------------------------------------------------------------------
+
+  2.1. Motivação / Problematização
+       - Crescimento da produção digital e necessidade de comparação automática
+       - Ferramentas comerciais como caixas-pretas
+       - Carência de tratamento para português
+
+  2.2. Pergunta de pesquisa
+       - Como desenvolver um sistema web capaz de comparar dois textos e
+         apresentar o índice de correlação de forma clara e interpretável?
+
+  2.3. Objetivo geral
+       - Desenvolver sistema web de comparação de conteúdo de textos com PLN
+
+  2.4. Objetivos específicos
+       (i)   Investigar técnicas de similaridade textual
+       (ii)  Projetar a arquitetura do sistema
+       (iii) Implementar módulo de processamento (TF-IDF + métricas)
+       (iv)  Desenvolver interface web (front-end)
+
+  2.5. Justificativa
+       - Contribuição para engenharia de software + PLN
+       - Ferramenta prática para revisão textual e análise de originalidade
+
+  2.6. Estrutura do trabalho
+       - Descrição da organização dos capítulos 2 a 5
+
+--------------------------------------------------------------------------------
+3. SEÇÃO 2 — FUNDAMENTAÇÃO TEÓRICA
+   "Similaridade textual e engenharia de sistemas"
+--------------------------------------------------------------------------------
+
+  3.1. Seção 2.1 — Processamento de Linguagem Natural
+       - Definição de PLN (Jurafsky; Martin, 2024)
+       - Etapas: tokenização, remoção de stopwords, stemização (RSLP),
+         lematização
+       - Desafios do PLN para o português (Santos, 2002)
+
+  3.2. Seção 2.2 — Representação vetorial de textos
+       - Modelo de espaço vetorial (Salton; Buckley, 1988)
+       - Bag of Words (BoW)
+       - TF-IDF: Term Frequency – Inverse Document Frequency (Ramos, 2003)
+       - Embeddings: BERT (Devlin et al., 2019) e SBERT (Reimers; Gurevych, 2019)
+
+  3.3. Seção 2.3 — Métricas de similaridade textual
+       - Classificação: string-based, corpus-based, knowledge-based
+         (Gomaa; Fahmy, 2013)
+       - Similaridade por cosseno: ângulo entre vetores, valor 0 a 1
+       - Coeficiente de Jaccard: interseção/união de conjuntos
+       - Métricas baseadas em embeddings (SBERT)
+
+  3.4. Seção 2.4 — Sistemas de detecção de similaridade
+       - Ferramentas: Turnitin, Copyscape, MOSS
+       - Abordagem comum: TF-IDF + cosseno + fingerprinting
+       - Escolha da técnica conforme objetivo (Sung et al., 2019)
+
+  3.5. Seção 2.5 — Engenharia de software para sistemas web
+       - Princípios de engenharia de software (Pressman; Maxim, 2021)
+       - Arquitetura cliente-servidor (Sommerville, 2019)
+       - Python como plataforma para PLN (Bird; Klein; Loper, 2009)
+
+--------------------------------------------------------------------------------
+4. SEÇÃO 3 — METODOLOGIA
+--------------------------------------------------------------------------------
+
+  4.1. Seção 3.1 — Classificação da pesquisa
+       - Natureza: aplicada
+       - Abordagem: quantitativa
+       - Objetivos: exploratória
+       - Procedimentos: bibliográfica + experimental
+       - Referências: Gil (2017), Silva e Menezes (2005)
+
+  4.2. Seção 3.2 — Etapas do desenvolvimento (7 etapas)
+       Etapa 1: Levantamento bibliográfico
+       Etapa 2: Definição dos requisitos
+       Etapa 3: Escolha da plataforma tecnológica
+       Etapa 4: Projeto da arquitetura
+       Etapa 5: Implementação do módulo de processamento
+       Etapa 6: Desenvolvimento do front-end
+       Etapa 7: Testes e validação
+
+  4.3. Seção 3.3 — Ferramentas e tecnologias
+       - Python + FastAPI (back-end / API REST)
+       - NLTK (tokenização, stopwords, stemização)
+       - scikit-learn (TF-IDF, similaridade por cosseno)
+       - React + TypeScript + Tailwind CSS (front-end)
+       - Vite (ferramenta de build)
+       - Git (controle de versão)
+       - Visual Studio Code (editor)
+
+--------------------------------------------------------------------------------
+5. SEÇÃO 4 — RESULTADOS E DISCUSSÕES
+--------------------------------------------------------------------------------
+
+  5.1. Seção 4.1 — Resultados do levantamento bibliográfico
+       - Três abordagens identificadas: TF-IDF, Jaccard, SBERT
+       - Quadro 1: Comparativo das técnicas de similaridade textual
+
+  5.2. Seção 4.2 — Definição da arquitetura e tecnologias
+       - Arquitetura cliente-servidor
+       - Endpoints: POST /api/compare, GET /api/health
+       - CORS, validação (max 500.000 caracteres), Swagger UI (/docs)
+       - Quadro 2: Tecnologias adotadas por componente (7 linhas)
+
+  5.3. Seção 4.3 — Implementação do módulo de processamento
+       - Pipeline: pré-processamento → vetorização → cálculo de similaridade
+       - Mapeamento reverso stem → palavra original
+       - Estatísticas: contagem de palavras e tempo de processamento
+
+  5.4. Seção 4.4 — Desenvolvimento do front-end
+       - Componente TextInput: áreas de texto, upload de arquivos, contador
+       - Componente Results: barras coloridas (verde/amarelo/vermelho),
+         estatísticas
+       - Componente SharedTerms: tabela de termos + termos exclusivos
+       - Atalho Ctrl+Enter
+
+  5.5. Seção 4.5 — Testes e validação
+       - Três cenários: idênticos, sem relação, parcialmente similares
+       - Quadro 3: Resultados dos testes de validação
+
+--------------------------------------------------------------------------------
+6. SEÇÃO 5 — CONSIDERAÇÕES FINAIS
+--------------------------------------------------------------------------------
+
+  6.1. Retomada do objetivo geral
+
+  6.2. Verificação dos objetivos específicos
+       - (i) Investigação: levantamento bibliográfico concluído
+       - (ii) Arquitetura: cliente-servidor com FastAPI + React definida
+       - (iii) Processamento: pipeline NLP implementado e validado
+       - (iv) Front-end: interface web funcional e intuitiva
+
+  6.3. Sugestões para trabalhos futuros
+       - Integração de SBERT para similaridade semântica
+       - Comparação por trechos específicos
+       - Testes de escalabilidade com volumes maiores
+
+--------------------------------------------------------------------------------
+7. REFERÊNCIAS BIBLIOGRÁFICAS
+--------------------------------------------------------------------------------
+
+  17 referências em formato ABNT (NBR 6023/2018), ordem alfabética:
+
+   [1] BIRD; KLEIN; LOPER (2009) — NLP with Python
+   [2] DEVLIN et al. (2019) — BERT
+   [3] GIL (2017) — Projetos de pesquisa
+   [4] GOMAA; FAHMY (2013) — Survey of text similarity
+   [5] JURAFSKY; MARTIN (2024) — Speech and Language Processing
+   [6] LAN (2022) — TF-IDF hybrid algorithm
+   [7] MANNING; RAGHAVAN; SCHÜTZE (2008) — Information Retrieval
+   [8] ORENGO; HUYCK (2001) — RSLP stemmer
+   [9] PRESSMAN; MAXIM (2021) — Engenharia de Software
+  [10] RAMOS (2003) — TF-IDF in document queries
+  [11] REIMERS; GUREVYCH (2019) — Sentence-BERT
+  [12] SALTON; BUCKLEY (1988) — Term-weighting
+  [13] SANTOS (2002) — PLN para português
+  [14] SILVA; MENEZES (2005) — Metodologia da pesquisa
+  [15] SOMMERVILLE (2019) — Engenharia de Software
+  [16] SUNG et al. (2019) — Survey of text similarity
+  [17] VIEIRA; LIMA (2001) — Linguística computacional
+
+--------------------------------------------------------------------------------
+8. FORMATAÇÃO DO DOCUMENTO WORD
+--------------------------------------------------------------------------------
+
+  8.1. Página: A4 (21 x 29,7 cm)
+  8.2. Margens: superior 3 cm, inferior 2 cm, esquerda 3 cm, direita 2 cm
+  8.3. Fonte: Arial 12 (texto), Arial 10 (resumo, tabelas, referências)
+  8.4. Espaçamento: 1,5 (texto), simples (resumo e referências)
+  8.5. Recuo: 1,25 cm na primeira linha dos parágrafos
+  8.6. Numeração de página: canto superior direito
+  8.7. Seções primárias: MAIÚSCULA + NEGRITO
+  8.8. Seções secundárias: MAIÚSCULA sem negrito
+  8.9. Seções terciárias: minúscula + negrito
+  8.10. Referências: títulos em negrito (ABNT), espaçamento simples
+  8.11. Tabelas: legenda acima, fonte abaixo, estilo "Table Grid"
+  8.12. 3 Quadros: citados antes de aparecer no texto (ABNT)
+
+
+================================================================================
+PARTE 2 — ETAPAS DO SISTEMA DESENVOLVIDO
+================================================================================
+
+Localização: faculdade-tcc/tcc/src/
+
+--------------------------------------------------------------------------------
+9. BACK-END (Python + FastAPI)
+   Localização: src/backend/
+--------------------------------------------------------------------------------
+
+  9.1. Arquivo: requirements.txt
+       - Dependências: fastapi, uvicorn[standard], nltk, scikit-learn
+
+  9.2. Arquivo: nlp.py — Módulo de Processamento NLP
+       Funções implementadas:
+
+       9.2.1. preprocess(text) → (texto_processado, stem_to_word)
+              - Conversão para minúsculas
+              - Remoção de caracteres especiais e números (regex)
+              - Tokenização (word_tokenize, language='portuguese')
+              - Remoção de stopwords (lista portuguesa do NLTK)
+              - Stemização RSLP (RSLPStemmer)
+              - Mapeamento reverso: cada stem → palavra original mais longa
+
+       9.2.2. compute_jaccard(text1, text2) → float
+              - Cálculo: |interseção| / |união| dos conjuntos de termos
+
+       9.2.3. count_words(text) → int
+              - Contagem simples de palavras
+
+       9.2.4. compare_texts(text1, text2) → dict
+              - Truncamento de textos (máx. 500.000 caracteres)
+              - Pré-processamento dos dois textos
+              - Vetorização TF-IDF (TfidfVectorizer do scikit-learn)
+              - Cálculo de similaridade por cosseno (cosine_similarity)
+              - Cálculo do coeficiente de Jaccard
+              - Identificação dos 15 termos compartilhados com maior peso
+              - Identificação dos 10 termos exclusivos de cada texto
+              - Medição do tempo de processamento (ms)
+              - Retorno: cosine_similarity, jaccard_coefficient,
+                shared_terms, text1_unique_terms, text2_unique_terms, stats
+
+  9.3. Arquivo: main.py — API REST (FastAPI)
+       Configurações:
+       - CORS: origens permitidas (localhost:5173)
+       - Modelos Pydantic: CompareRequest, CompareResponse, SharedTerm, Stats
+       - Validação: max_length nos campos de texto
+
+       Endpoints:
+
+       9.3.1. GET /api/health
+              - Retorna: { "status": "ok" }
+              - Propósito: verificação de disponibilidade
+
+       9.3.2. POST /api/compare
+              - Recebe: { "text1": "...", "text2": "..." }
+              - Retorna: {
+                  "cosine_similarity": float,
+                  "jaccard_coefficient": float,
+                  "shared_terms": [{ "term": str, "weight": float }],
+                  "text1_unique_terms": [str],
+                  "text2_unique_terms": [str],
+                  "stats": {
+                      "text1_words": int,
+                      "text2_words": int,
+                      "processing_time_ms": int
+                  }
+                }
+
+       9.3.3. Documentação automática: Swagger UI em /docs
+
+       Execução: py main.py (uvicorn na porta 8000, com reload)
+
+--------------------------------------------------------------------------------
+10. FRONT-END (React + TypeScript + Tailwind CSS)
+    Localização: src/frontend/
+--------------------------------------------------------------------------------
+
+  10.1. Configuração do projeto
+        - Vite como bundler (vite.config.ts)
+        - Tailwind CSS v4 via plugin @tailwindcss/vite
+        - TypeScript para tipagem estática
+        - index.html: lang="pt-BR", título "Comparador de Textos"
+
+  10.2. Arquivo: src/App.tsx — Componente principal
+        Funcionalidades:
+        - Estado: text1, text2, result, loading, error
+        - handleCompare(): chamada POST /api/compare via fetch
+        - handleClear(): limpa todos os estados
+        - Atalho de teclado: Ctrl+Enter para comparar
+        - Tratamento de erros: textos vazios, API offline, erros HTTP
+        - Layout: header → textos lado a lado → botões → resultados → footer
+
+  10.3. Arquivo: src/components/TextInput.tsx
+        Funcionalidades:
+        - Área de texto (textarea) com 12 linhas
+        - Upload de arquivos: .txt, .md, .csv, .log
+        - Leitura via FileReader (UTF-8)
+        - Exibição do nome do arquivo após upload
+        - Contador de palavras em tempo real
+        - Reset do input para permitir recarregar o mesmo arquivo
+
+  10.4. Arquivo: src/components/Results.tsx
+        Funcionalidades:
+        - MetricBar: componente reutilizável de barra de progresso
+        - Cores por faixa: verde (>= 70%), amarelo (>= 40%), vermelho (< 40%)
+        - Animação de transição (duration-700, ease-out)
+        - Exibição: similaridade por cosseno (%) e Jaccard (%)
+        - Estatísticas: palavras texto 1, palavras texto 2, tempo (ms)
+
+  10.5. Arquivo: src/components/SharedTerms.tsx
+        Funcionalidades:
+        - Tabela: até 15 termos compartilhados (termo, peso, barra de relevância)
+        - Termos exclusivos do Texto 1: badges azuis
+        - Termos exclusivos do Texto 2: badges roxos
+        - Mensagem quando nenhum termo em comum é encontrado
+
+--------------------------------------------------------------------------------
+11. FLUXO DE FUNCIONAMENTO DO SISTEMA
+--------------------------------------------------------------------------------
+
+  11.1. Usuário acessa a interface web (localhost:5173)
+  11.2. Usuário insere ou carrega dois textos nos campos
+  11.3. Usuário clica em "Comparar" ou pressiona Ctrl+Enter
+  11.4. Front-end envia POST /api/compare com os dois textos
+  11.5. Back-end recebe e valida os textos
+  11.6. Módulo NLP executa o pipeline:
+        a) Pré-processamento (tokenização, lowercase, stopwords, RSLP)
+        b) Vetorização TF-IDF
+        c) Cálculo de similaridade por cosseno
+        d) Cálculo do coeficiente de Jaccard
+        e) Identificação de termos compartilhados e exclusivos
+  11.7. API retorna JSON com métricas e termos
+  11.8. Front-end renderiza resultados:
+        - Barras de similaridade com cores
+        - Tabela de termos compartilhados
+        - Listas de termos exclusivos
+        - Estatísticas de processamento
+
+--------------------------------------------------------------------------------
+12. COMO EXECUTAR O SISTEMA
+--------------------------------------------------------------------------------
+
+  12.1. Back-end:
+        cd faculdade/tcc/src/backend
+        pip install -r requirements.txt
+        py main.py
+        → API disponível em http://localhost:8000
+        → Swagger UI em http://localhost:8000/docs
+
+  12.2. Front-end:
+        cd faculdade/tcc/src/frontend
+        npm install
+        npm run dev
+        → Interface disponível em http://localhost:5173
+
+--------------------------------------------------------------------------------
+13. RESULTADOS DOS TESTES REALIZADOS
+--------------------------------------------------------------------------------
+
+  Cenário 1 — Textos idênticos:
+    Cosseno: 100%  |  Jaccard: 100%  |  Termos em comum: todos  |  Tempo: < 20ms
+
+  Cenário 2 — Textos sem relação:
+    Cosseno: 0%  |  Jaccard: 0%  |  Termos em comum: nenhum  |  Tempo: < 20ms
+
+  Cenário 3 — Textos parcialmente similares:
+    Cosseno: 38%  |  Jaccard: 35%  |  Termos em comum: 7  |  Tempo: < 25ms
+
+
+================================================================================
+FIM DO DOCUMENTO
+================================================================================
