@@ -1,0 +1,32 @@
+{
+  "n_pares": 100,
+  "cosseno": {
+    "pearson": 0.6881,
+    "pearson_p": 0.0,
+    "spearman": 0.6823,
+    "spearman_p": 0.0,
+    "mae": 0.2363,
+    "mse": 0.0842,
+    "media": 0.5168,
+    "desvio": 0.2725
+  },
+  "jaccard": {
+    "pearson": 0.6779,
+    "pearson_p": 0.0,
+    "spearman": 0.6802,
+    "spearman_p": 0.0,
+    "mae": 0.2484,
+    "mse": 0.0913,
+    "media": 0.5034,
+    "desvio": 0.2729
+  },
+  "humano": {
+    "media": 0.7189,
+    "desvio": 0.2559
+  },
+  "tempo_ms": {
+    "mediana": 2.0,
+    "media": 2.0,
+    "max": 45.0
+  }
+}
