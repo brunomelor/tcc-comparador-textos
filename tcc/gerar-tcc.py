@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Gerador do TCC - Desenvolvimento de sistema de comparação de conteúdo de textos
-Bruno Meinertz Lorençatto - RU 3802493 - Engenharia de Software - UNINTER
+Bruno Lorencatto - Engenharia de Software - UNINTER
 """
 
 from __future__ import annotations
@@ -1502,6 +1502,15 @@ def secao_apendice_a(doc: Document) -> None:
         'pacote `scipy.stats`. Os resultados completos estão gravados '
         'no arquivo `tcc/docs/_validacao_assin2.json`, permitindo a '
         'consulta de todos os 100 escores.'
+    )
+
+    add_paragrafo(doc,
+        'O código-fonte completo do sistema — incluindo o *back-end* '
+        '(FastAPI, NLTK e scikit-learn), o *front-end* (React, '
+        'TypeScript e Tailwind CSS) e o *script* de validação descrito '
+        'nesta seção — está disponível publicamente em: '
+        'https://github.com/brunomelor/tcc-comparador-textos. Acesso '
+        'em: 17 maio 2026.'
     )
 
     add_paragrafo(doc,
